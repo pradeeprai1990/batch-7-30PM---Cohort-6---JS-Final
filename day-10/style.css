@@ -1,0 +1,121 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.downloadBr{
+    background-color: rgb(193, 35, 35);
+    color: white;
+    border: none;
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+    transform: rotate(90deg);
+    left: -50px;
+    top: 30%;
+    position: fixed;
+}
+
+
+.brochureModal{
+    width: 400px;
+    position: fixed;
+    left: 50%;
+    transition: 0.5s;
+    top:-1000px;
+    transform: translate(-50%,-50%);
+    box-shadow: 0px 0px 10px 2px #ccc;
+    background-color: white;
+}
+.brochureModal h3{
+    padding: 10px;
+    position: relative;
+    border-bottom: 1px solid #ccc;
+}
+.brochureModal span{
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+}
+.brochureModal form{
+    padding: 15px;
+}
+
+.inputOuter{
+    margin-bottom: 20px;
+}
+.inputOuter input,.inputOuter select{
+    width: 100%;
+    padding: 10px;
+}
+.inputOuter button{
+    width: 100%;
+    padding: 10px 0px;
+    background-color: rgb(193, 35, 35);
+    color: white;
+    border: none;
+}
+
+.showModal{
+    top: 50%;
+}
+
+
+.projectSection{
+    width: 100%;
+    padding: 50px 0px;
+}
+
+.projectSection h2{
+    text-align: center;
+}
+
+.offeringMid{
+    max-width: 1320px;
+    margin: auto;
+    display: grid;
+    gap: 20px;
+    margin-top: 40px;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.offeringMid figure img{
+    width: 100%;
+}
+
+.galleryOverlay{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    transform: scale(0);
+    transition: 0.5s;
+}
+
+.galleryModal{
+    width: 1000px;
+    position: relative;
+    
+
+}
+.galleryModal img{
+    width: 100%;
+}
+.galleryModal span{
+    position: absolute;
+    font-size: 40px;
+    cursor: pointer;
+    color: white;
+    right: 0px;
+}
+
+
+.galleryModalShow{
+    transform: scale(1);
+}

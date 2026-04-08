@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form and Table Section</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f4f7fb, #dfe9f3);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .section-wrapper {
+            width: 100%;
+            max-width: 1320px;
+            display: grid;
+            grid-template-columns: 30% auto;
+            gap: 24px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #1f3c5a;
+            font-size: 24px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #23415f;
+            margin-bottom: 6px;
+            display: inline-block;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #c9d6e2;
+            border-radius: 10px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #2f80ed;
+            box-shadow: 0 0 0 3px rgba(47, 128, 237, 0.15);
+        }
+
+        button {
+            margin-top: 8px;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            background: #2f80ed;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1f6ed4;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        th,
+        td {
+            padding: 14px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            background: #2f80ed;
+            color: #ffffff;
+        }
+
+        tr:nth-child(even) td {
+            background: #f8fbff;
+        }
+
+        @media (max-width: 768px) {
+            .section-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="section-wrapper">
+        <div class="card">
+            <h2>Contact Form</h2>
+            <form>
+                <div>
+                    <label for="name">NAME</label>
+                    <input 
+                    type="text" 
+                    id="name"
+                    placeholder="Enter your name"
+                    name="userName" 
+                     
+                     />
+                </div>
+
+                <div>
+                    <label for="email">EMAIL</label>
+                    <input 
+                    type="email" 
+                    id="email"
+                     placeholder="Enter your email"
+                     name="userEmail"
+                     
+                     >
+                </div>
+
+                <div>
+                    <label for="phone">PHONE</label>
+                    <input 
+                    type="tel" 
+                    id="phone" 
+                    placeholder="Enter your phone number"
+                    name="userPhone"
+                    
+                    >
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div class="card">
+            <h2>Display Data</h2>
+            <table>
+                <thead>
+                    <tr>
+                         <th>Sr No.</th>   
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   
+                    
+                </tbody>
+            </table>
+        </div>
+    </section>
+</body>
+<script>
+
+    let userList=[]
+    let formElemnt = document.querySelector("form")
+    formElemnt.addEventListener(
+        "submit",
+        (e) => {
+            e.preventDefault() //Page Refresh Stop
+
+            let obj={
+                userName:e.target.userName.value,
+                userEmail:e.target.userEmail.value,
+                userPhone:e.target.userPhone.value
+            }
+
+            let checkUserinList=userList
+            .find(
+                (obj)=>obj.userEmail==e.target.userEmail.value
+            
+            )
+            if(checkUserinList){
+                alert("Email  Id already exist..")
+                return
+            }
+            e.target.reset()
+            userList.push(obj)
+            displayUser()
+            
+           
+        }
+
+    )
+
+
+    // let user=[
+    //     {
+    //         userName:"John Doe",
+    //         userEmail:"jonhnew@gmail.com",
+    //         userPhone:"9876543210"
+    //     },
+    //     {
+    //         userName:"Jane Smith",
+    //         userEmail:"jane@gmail.com",
+    //         userPhone:"9123456780"
+    //     },
+    //     {
+    //         userName:"Alex Roy",
+    //         userEmail:"alex@gmail.com",
+    //         userPhone:"9988776655"
+    //     },
+    //     {
+    //         userName:"John Doe",
+    //         userEmail:"jonh@gmail.com",
+    //         userPhone:"9876543210"
+    //     },
+    //     {
+    //         userName:"Pradeep ws",
+    //         userEmail:"Pradeepws@gmail.com",
+    //         userPhone:"9876543210"
+    //     },
+       
+
+    // ]
+
+
+let tbodyElement=document.querySelector("table tbody")
+
+let displayUser=()=>{
+
+    let list=''
+    userList.forEach((obj,index)=>{
+        list+=` <tr>
+                        <td>${index+1}</td>
+                        <td>${obj.userName}</td>
+                        <td>${obj.userEmail}</td>
+                        <td>${obj.userPhone}</td>
+                        <td><button data-delid="${index}">Delete</button></td>
+            </tr>`
+
+    })
+    tbodyElement.innerHTML=list
+}   
+
+
+
+tbodyElement.addEventListener(
+    "click",
+    (e)=>{
+        if(e.target.tagName=="BUTTON"){
+            let delIdex= e.target.getAttribute("data-delid")
+
+            userList.splice(delIdex,1 )
+            displayUser()
+        }
+        
+    }
+)
+
+
+// let l=[10,20,30,40,50]
+
+// l.splice(2,1)
+// console.log(l);
+
+// let filterUser=user.filter((obj)=>obj.userName=="John Doe")
+
+// console.log(filterUser);
+
+
+
+//filterUser -->Array[ 2 Object ]
+
+
+    
+    // let checkUser=user.find((obj)=>obj.userEmail=="jonh@gmail.com")
+
+
+    // let checkUser=user.find((obj)=>{
+    //     if(obj.userEmail=="jonh@gmail.com"){
+    //         return obj
+    //     }
+    // })
+
+    // if(checkUser){
+    //     console.log("Email Id All Ready Exist");
+        
+    // }
+    // else{
+        
+        
+    // }
+    
+
+    let obj={
+        uname:"Pradeep",
+        uemail:"pradeep@gmail.com",
+        uPhone:8888888
+    }
+
+    let {uemail}=obj
+
+    console.log(uemail);
+    
+
+</script>
+
+</html>

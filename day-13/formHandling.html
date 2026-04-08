@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        .mainSection {
+            width: 100%;
+            padding: 40px 0px;
+            background-color: aqua;
+        }
+
+        .mainDiv {
+            max-width: 1320px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 30% auto;
+            gap: 20px;
+        }
+
+        .mainDiv form {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .mainDiv form div {
+            margin-bottom: 20px;
+        }
+
+        .mainDiv form div label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .mainDiv form div input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .mainDiv form button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="mainSection">
+        <h1 style="text-align: center;">Form Handling</h1>
+        <div class="mainDiv">
+            <form>
+                <div>
+                    <label for="name">Name</label>
+                    <input type="text" name="userName">
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" name="userEmail">
+                </div>
+                <div>
+                    <label for="password">PHone</label>
+                    <input type="text" name="userPhone">
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+
+</body>
+
+<script>
+    let formElement = document.querySelector(".mainDiv form")
+    let user=[]
+    formElement.addEventListener(
+        "submit",
+        (event) => {
+
+            event.preventDefault()//Form Page Reload Stop
+            console.log(event.target); //Form
+
+            let userName = event.target.userName.value
+            let userEmail = event.target.userEmail.value
+            let userPhone = event.target.userPhone.value
+            console.log(userName, userEmail,userPhone);
+
+            let obj={
+                userName,
+                userEmail,
+                userPhone
+            }
+
+            user.push(obj)
+            
+            console.log(user);
+            
+
+        }
+    )
+
+</script>
+
+</html>

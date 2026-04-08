@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Num1 <input type="text" id="num1"/> <Br/>
+    Num2 <input type="text" id="num2"/> <Br/>
+    <button onclick="simpleAdd()">Save</button> <br/>
+    Output <input type="text" id="output">
+</body>
+<script>
+    let num1Input=document.getElementById("num1")
+    let num2Input=document.getElementById("num2")
+    let outputInput=document.getElementById("output")
+    
+    function simpleAdd(){
+         let num1Value=Number(num1Input.value) //20
+         let num2Value=Number(num2Input.value) //30
+
+         outputInput.value= num1Value + num2Value //20+30 =50
+        //<input value="50" type="text" id="output">
+
+        num1Input.value=''
+        num2Input.value=''
+    }
+</script>
+</html>

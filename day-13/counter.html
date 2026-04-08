@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+      
+        .main h1{
+            text-align: center;
+            margin-top: 100px;
+        }
+        .btnOuter{
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+          <h1>Counter App <span>0</span> </h1>
+
+          <div class="btnOuter">
+            <button id="start">Start</button>
+            <button id="stop">Stop</button>
+          </div>
+      
+    </div>
+  
+</body>
+<script>
+
+    let spanElement=document.querySelector(".main h1 span")
+    let btnStart=document.querySelector("#start")
+
+    let btnStop=document.querySelector("#stop")
+
+    let count=0
+    let interval
+    btnStart.addEventListener(
+        "click",
+        ()=>{
+           
+             interval=setInterval(
+                ()=>{
+                    count++
+                    spanElement.innerHTML=count
+
+                }
+                ,1000
+            )
+        }
+    )
+
+
+    btnStop.addEventListener(
+        "click",
+        ()=>{
+            clearInterval(interval)
+        }
+    )
+
+</script>
+</html>

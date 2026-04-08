@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            font-family: sans-serif;
+        }
+         .main {
+            width: 1000px;
+            margin: auto;
+         }
+        .main textarea{
+            width: 100%;
+            padding: 10px;
+            height: 200px;
+            border: 1px solid #ccc;
+            resize: none;
+        }
+        .resDiv{
+            margin-top: 20px;
+            border: 1px solid red;
+            padding: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+       
+        <textarea onkeyup="copyText()" name="" id=""></textarea>
+        <h3>Length: <span></span> </h3>
+        <h4>Words: <span></span> </h4>
+        <div class="resDiv"></div>
+    </div>
+</body>
+
+<script>
+    let textareaElement=document.querySelector("textarea")
+    let resDivElement=document.querySelector(".resDiv")
+    let lenElement=document.querySelector("h3 span")
+     let wordElement=document.querySelector("h4 span")
+    let copyText=()=>{
+        // console.log(textareaElement.value);
+
+        if(textareaElement.value.length>0){
+            resDivElement.style.display="block"
+            resDivElement.innerHTML=textareaElement.value
+            lenElement.innerHTML=textareaElement.value.length
+            wordElement.innerHTML= textareaElement.value.split(" ").length
+        }
+        else{
+              resDivElement.style.display="none"
+        }
+       
+        
+    }
+</script>
+</html>

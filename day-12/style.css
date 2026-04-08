@@ -1,0 +1,13 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+
+
+.main{
+    width: 1170px;
+    margin: auto;
+    border: 1px solid #ccc;
+}
+

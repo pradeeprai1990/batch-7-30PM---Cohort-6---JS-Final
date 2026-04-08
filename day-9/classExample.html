@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0px;
+            padding: 0px;
+            font-family: sans-serif;
+        }
+
+        .main{
+            width: 300px;
+           padding: 15px;
+            background-color: aliceblue;
+            margin: auto;
+        }
+
+        .activeDiv{
+            background: red;
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+      <div class="main ">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio nobis quo hic repudiandae, itaque soluta, fugit alias ipsum deleniti nam culpa temporibus quidem numquam est veniam dolorum aliquam assumenda ea!
+      </div>
+
+      <button onclick="sameLogicForAllBtn(1)">Class Add</button>
+      <button onclick="sameLogicForAllBtn(2)">Class Remove</button>
+      <button onclick="sameLogicForAllBtn(3)">Class Toggle</button>
+</body>
+<script>
+     let mainElement=document.querySelector(".main")
+    //type = 1,type=2,type=3
+
+     let sameLogicForAllBtn=(type)=>{
+        if(type==1){
+             mainElement.classList.add("activeDiv")
+        }
+        else if(type==2){
+            mainElement.classList.remove("activeDiv")
+        }
+        else{
+              mainElement.classList.toggle("activeDiv")
+        }
+     }
+     
+     function addNewClassinElement(){
+        mainElement.classList.add("activeDiv")
+        //<div class="main activeDiv"></div>
+     }
+     
+      function removeClassinElement(){
+          //<div class="main activeDiv"></div>
+        mainElement.classList.remove("activeDiv")
+        //<div class="main "></div>
+     }
+     
+     function toggleClassinElement(){
+         
+        mainElement.classList.toggle("activeDiv")
+      
+     }
+     
+</script>
+</html>

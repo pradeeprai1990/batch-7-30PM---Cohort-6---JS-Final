@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body">
+    
+   
+    <img 
+    id="img1" 
+    width="300" 
+    height="200" 
+    src="https://uptownskylla.in/wp-content/uploads/2022/09/01-1-2048x1497.jpg" 
+    alt=""
+    />
+    <h1 id="heading"> Welcome <b>to</b> Ws  </h1>
+</body>
+<script>
+
+    let imgElement=document.getElementById("img1")
+    imgElement.title="WsCubetech"
+    imgElement.width="500"
+    console.log(imgElement.src);
+    //https://uptownskylla.in/wp-content/uploads/2022/09/01-1-2048x1497.jpg
+      console.log(imgElement.width);
+      //300
+       console.log(imgElement.height);
+       //200
+
+
+    let bodyElement=document.getElementById("body")
+
+    // console.log(bodyElement.innerHTML); // <h1 id="heading"> Welcome <b>to</b> Ws  </h1>
+    console.log(bodyElement.innerText); // Welcome to Ws
+    
+
+    let h1Element= document.getElementById("heading")
+    console.log(h1Element.innerHTML); //h1 Inside Content Welcome <b>to</b> Ws 
+     console.log(h1Element.innerText); // Welcome to Ws
+</script>
+</html>

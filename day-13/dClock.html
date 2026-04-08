@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 100px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>08:31 PM</h1>
+</body>
+<script>
+
+    let h1Element=document.querySelector("h1")
+
+    let dClock = () => {
+        let date = new Date()
+
+        let hour = date.getHours() //20
+
+        let finalHour = (hour > 12) ? hour - 12 : hour;
+
+        finalHour = finalHour < 10 ? "0" + finalHour : finalHour;
+
+        let finalMin = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes()
+
+        let finalSec = date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds()
+
+
+        let type = date.getHours() > 12 ? "PM" : "AM"
+
+
+        h1Element.innerHTML=`${finalHour}:${finalMin}:${finalSec} ${type}`
+
+       
+    }
+    dClock()
+    setInterval(()=>{
+        dClock()     
+    },1000)
+
+
+    // 13 -- 01
+    // 14 -- 02
+    // 14 -- 02
+    // 14 -- 02
+
+
+
+
+    // let m=new Math()
+    // console.log(Math.ceil(10.5)); //11
+    // console.log(Math.floor(11.2)); //11
+
+
+
+
+</script>
+
+</html>

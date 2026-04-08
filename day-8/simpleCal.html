@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Num1 <input type="text" id="num1"> 
+    <br/>
+    <select id="opr">
+        <option value="">Select Opr</option>    
+        <option value="+">+</option>
+        <option value="-">-</option>
+         <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+     <br/>
+    Num1 <input type="text" id="num2"> 
+    <br/>
+    <button onclick="simpleCal()">Calculator</button>
+    <br/>
+      Output <input type="text" id="output"> 
+</body>
+<script>
+    let num1Input=document.getElementById("num1")
+    let num2Input=document.getElementById("num2")
+    let opr=document.getElementById("opr")
+    let outputInput=document.getElementById("output")
+    function simpleCal(){
+        let num1Value= Number(num1Input.value) //44
+        let num2Value=Number(num2Input.value) //66
+        let oprSymbol=opr.value; //+,-,*,/   //*
+        let output;
+        switch (oprSymbol) {
+            case "+":
+                output=num1Value+num2Value
+                break
+             
+            case "-":
+                output=num1Value-num2Value
+                break
+            case "*":
+                output=num1Value*num2Value
+                break
+             case "/":
+                output=num1Value/num2Value
+                break
+            default:
+                  output="Invalid Opr"
+                   break         
+
+        }
+        outputInput.value=output
+    }
+
+
+    var a=10
+    let c=25
+
+    let g=80
+
+    let w='${a} + ${c} * ${g} ' //10+25*80
+    console.log(w);
+    
+    console.log(  eval(w)); //Error
+    
+</script>
+</html>
