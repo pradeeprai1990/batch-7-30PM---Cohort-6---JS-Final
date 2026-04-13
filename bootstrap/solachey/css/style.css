@@ -1,13 +1,55 @@
-@media (min-width: 1400px) { 
-    /* XXL */
-    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-        max-width: 1280px;
-    }
+:root{
+    --tp-heading-primary: #223d6d;
+}
+
+header{
+    position: fixed;
+    z-index: 999;
+    top: 40px;
+}
+
+.headerSticky{
+     top: 0px;
+}
+.discoverSection{
+    background: #F2F2F6;
+    color: var(--tp-heading-primary);
 }
 
 
-.aboutSection{
-    background-color: aqua;
-    padding: 40px 0px;
+.discoverItem{
+    position: relative;
+    margin: 0px;
+    overflow: hidden;
+}
+.discoverItem img{
+    transition: 0.5s;
 }
 
+.discoverItem:hover img{
+    transform: scale(1.2);
+}
+
+.discoverItemContent{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+}
+.discoverItem:hover .discoverItemContent{
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+#menu ul li a{
+    font-size: 18px;
+    color: rgb(48, 33, 33);
+    font-weight: bold;
+    margin-right: 20px;
+    text-transform: uppercase;
+}
